@@ -1,74 +1,133 @@
-# Library-Management-System
+# 📚 Library Management System (C++ | Data Structures)
 
-Digital Library Management System implemented in C++.
-
----
-
-## Features Implemented
-- Add and search books (using Binary Search Tree - BST)  
-- Register and search students (using Linked List)  
-- Borrow and return books with validation (max 3 books per student)  
-- Request queue for unavailable books (FIFO)  
-- Transaction history tracking (Stack)  
-- Display operations for all entities (books, students, requests, transactions)  
+A **Digital Library Management System** developed as a **Data Structures Final Lab Project**.  
+The system demonstrates the practical use of core data structures such as **Binary Search Trees, Linked Lists, Queues, and Stacks**, combined with a **graphical user interface (GUI)** built using **Dear ImGui**.
 
 ---
 
-## To Be Implemented (Easy to Add)
-- File I/O (save/load data)  
-- Graphical User Interface (Qt / wxWidgets / Dear ImGui)  
-- Search by book title or author  
-- Due date tracking for borrowed books  
-- Fine calculation for overdue returns  
+## 👥 Team Members
+
+- Abia Saeed  
+- Shayan Ijaz  
+- Noora Imran  
+- Raheel Ahmad  
+- Hammad Khalil  
+- Muhammad Musa (Team Lead)  
+- Malak Saad Bin Rashid  
+- Muhammad Zikria Shah  
+- Muhammad Rahim Ullah  
+- Muhammad Shameer Qureshi  
+
+**Instructor:** Usama Afridi  
+**Course:** Data Structures (Lab Project)
 
 ---
 
-## How to Build and Run
+## 🎯 Project Objectives
 
-### Prerequisites
-- g++ compiler with C++11 support  
-- `make` utility  
-
-### Build and Run
-```bash
-# Compile all sources
-g++ -std=c++11 -Iinclude src/main.cpp include/*.cpp -o library_system
-
-# Run
-./library_system
-```
+- Implement real-world library operations using fundamental data structures  
+- Efficiently manage books, students, and transactions  
+- Provide a user-friendly graphical interface  
+- Demonstrate understanding of data structure performance and design  
 
 ---
 
-## Data Structures Used
+## 🏗️ System Architecture
 
-| Data Structure | Purpose                          | Time Complexity |
-|----------------|---------------------------------|----------------|
-| BST            | Book catalog (sorted by ID)      | Search/Insert: O(log n) average |
-| Linked List    | Student records                  | Search: O(n) |
-| Queue          | Request queue (FIFO)             | Enqueue/Dequeue: O(1) |
-| Stack          | Transaction history (LIFO)      | Push/Pop: O(1) |
+The system is built around a central **`LibraryManager`** class that coordinates all operations:
+
+| Component | Data Structure Used |
+|---------|---------------------|
+| Book Catalog | Binary Search Tree (BST) |
+| Student Records | Linked List |
+| Book Requests | Queue (FIFO) |
+| Transaction History | Stack (LIFO) |
+| Data Persistence | CSV File Handling |
+| User Interface | Dear ImGui |
 
 ---
 
-## Architecture
+## ✨ Features
 
-### Design Principles
-- **Separation of Concerns:** Each class has a single responsibility  
-- **Single Source of Truth:** Only `LibraryManager` modifies the system state  
-- **Encapsulation:** Entities don't know about data structures  
-- **UI-Ready:** All logic in manager, so GUI can be added easily  
+### 📖 Book Management
+- Add new books
+- Search books by ID, title, or author
+- View all books in sorted order (BST inorder traversal)
 
-### Class Responsibilities
+### 👨‍🎓 Student Management
+- Register students
+- Search student records
+- View currently borrowed books
 
-#### Entities (Data Only)
-- **Book:** Stores attributes like ID, title, author, available copies  
-- **Student:** Stores borrowed book IDs  
-- **Transaction:** Immutable record of borrow/return actions  
+### 🔄 Issue & Return
+- Borrow and return books
+- Borrowing limit enforcement
+- Automatic availability updates
 
-#### Data Structures (Generic)
-- **BST:** Generic tree for searchable data  
-- **LinkedList:** Generic list for students  
-- **Queue:** Generic FIFO for requests  
-- **Stack:** Generic LIFO for history
+### ⏳ Request Queue
+- Students are queued when books are unavailable
+- FIFO-based fair request handling
+
+### 📜 Transaction History
+- Borrow/return records stored in a stack
+- Undo last transaction feature
+- View recent transactions
+
+### 💾 File Handling
+- Books, students, and transactions saved in CSV files
+- Data automatically loaded on startup
+
+---
+
+## 🖥️ Graphical User Interface
+
+The GUI is developed using **Dear ImGui** and includes:
+
+- Book Management Tab  
+- Student Management Tab  
+- Issue/Return Tab  
+- Request Queue Tab  
+- Transaction History & Statistics Tab  
+
+All GUI actions interact **only through the backend (`LibraryManager`)**, ensuring clean separation of concerns.
+
+---
+
+## 🛠️ Technologies Used
+
+- **Language:** C++
+- **GUI:** Dear ImGui + GLFW + OpenGL
+- **Data Structures:** BST, Linked List, Queue, Stack
+- **File Handling:** CSV (fstream)
+- **Documentation:** LaTeX
+- **AI Assistance:** ChatGPT, Claude AI (with permission)
+
+---
+
+## 🧠 AI Tools Usage
+
+- **ChatGPT**
+  - Designing class structures (`.h` / `.cpp`)
+  - Implementing data structures and logic
+  - Writing LaTeX documentation content
+
+- **Claude AI**
+  - Assisting with GUI layout and Dear ImGui code
+  - Generating LaTeX diagrams and tables
+
+All AI-generated content was **reviewed, modified, tested, and validated** by the team.
+
+---
+
+## ⚠️ Challenges Faced
+
+- Team coordination across multiple members  
+- Limited experience with GitHub and version control  
+- Manual code merging due to lack of repository usage  
+- AI usage limits (non-premium accounts)  
+
+These were resolved using meetings, manual integration, and careful testing.
+
+---
+
 
