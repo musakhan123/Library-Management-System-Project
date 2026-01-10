@@ -129,5 +129,11 @@ All AI-generated content was **reviewed, modified, tested, and validated** by th
 These were resolved using meetings, manual integration, and careful testing.
 
 ---
+## Build (Windows)
+
+Run:
+```bat
+build.bat
+
 
 
